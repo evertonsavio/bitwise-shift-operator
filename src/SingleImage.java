@@ -15,10 +15,13 @@ public class SingleImage
                 for (int y = 0; y < originalImg.getHeight(); y++)
                 {
                     int rgb = originalImg.getRGB(x, y);
-//                    int red = (rgb & 0x00FF0000) >> 16; // 2 bytes
-//                    int green = (rgb & 0x0000FF00) >> 8; // 1 byte
-//                    int blue = (rgb & 0x000000FF);
-//                    int transparency = (rgb & 0xFF000000) >> 24;
+                    int red = (rgb & 0x00FF0000) >> 16; // 2 bytes
+                    int green = (rgb & 0x0000FF00) >> 8; // 1 byte
+                    int blue = (rgb & 0x000000FF);
+                    int transparency = (rgb & 0xFF000000) >> 24;
+
+                    System.out.printf("RED Color is %d, green is %d, blue is %d & transparency is %d ", red, green, blue, transparency);
+                    System.out.println();
 
                     if((rgb & 0x00FF0000) >> 16 == 255 && (rgb & 0x0000FF00) >> 8 == 255 && (rgb & 0x000000FF) == 255)
                     {
